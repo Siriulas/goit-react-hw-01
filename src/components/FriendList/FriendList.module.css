@@ -1,13 +1,9 @@
-.friendsContainer {
+.friendsList {
+  gap: 24px;
+  padding: 12px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
-  padding: 0px;
-  gap: 10px;
-}
-.friendsList {
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: solid 3px;
+  flex-wrap: wrap;
+  color: #2a2a2a;
 }

@@ -1,35 +1,31 @@
-import css from "./profile.module.css"
-export default function Profile({image, name, tag, location, followers, views, likes}) {
-    return (
-        <div className={css.containerList}>
-           
-             <div className={css.containerWrap}>
-                <img className={css.userPhoto}
-                    src={image}
-                    alt="User avatar"
-                />
-                <p className={css.userName}>{name}</p>
-                <p className={css.userData}>{tag}</p>
-                <p className={css.userData}>{location}</p>
-            </div>
+import css from './Profile.module.css'
 
-            <ul className={css.container}>
-                <li className={css.userItem}>
-                    <span>Followers</span>
-                    <span>{followers}</span>
-                </li>
-                <li className={css.userItem}>
-                    <span>Views</span>
-                    <span>{views}</span>
-                </li>
-                <li className={css.userItem}>
-                    <span>Likes</span>
-                    <span>{likes}</span>
-                </li>
-                </ul>
+export default function Profile({ name, tag, location, image, stats }) {
+  return (
+  <div className={css.profileCard}>
 
-        </div>
-    );
-    
+      <div className={css.userProfile}>
+  
+        <img className={css.profileImg} src={image} alt="User avatar" />
+        <p className={css.profilName}>{name}</p>
+        <p className={css.profilTag}>@{tag}</p>
+        <p className={css.profilLocation}>{location}</p>
+      </div>
+      
+      <ul className={css.profileRecord}>
+        <li className={css.record}>
+          <span>Followers</span>
+          <span className={css.recordValue}>{stats.followers}</span>
+        </li>   
+        <li className={css.record}>
+          <span>Views</span>
+          <span className={css.recordValue}>{stats.views}</span>
+        </li>        
+        <li className={css.record}>
+          <span>Likes</span>
+          <span className={css.recordValue}>{stats.likes}</span>
+        </li>
+      </ul>
+
+    </div>)
 }
-    
