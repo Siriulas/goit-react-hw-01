@@ -1,15 +1,15 @@
-import userData from "./components/Profile/Profile_Data.json";
-export default function Profile() {
+
+export default function Profile({
+    user: { avatar, username, tag, location, stats: { followers, views, likes } } }) {
     return (
         <div>
-            <ul>{[userData].map(user => {
-                return <li>
-                     <div>
+           
+             <div>
                 <img
-                    src={user.image}
+                    src={user.avatar}
                     alt="User avatar"
                 />
-                <p>{user.name}</p>
+                <p>{user.username}</p>
                 <p>{user.tag}</p>
                 <p>{user.location}</p>
             </div>
@@ -27,10 +27,8 @@ export default function Profile() {
                     <span>Likes</span>
                     <span>{user.stats.likes}</span>
                 </li>
-                </ul></li>;
-            })}
-           
                 </ul>
+
         </div>
     );
     
