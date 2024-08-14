@@ -1,15 +1,23 @@
 
-import FriendList from "../FriendList/FriendList";
+import FriendList from "../FriendList/FriendList"
 import TransactionHistory from "../TransactionHistory/TransactionHistory";
-import ProfileList from "../ProfileList/ProfileList";
-import ProfileData from "../Profile/ProfileData.json"
-
+import Profile from "../Profile/Profile";
+import userData from "../../userData.json"
+import friends from "../../friends.json"
+import transactions from "../../transactions.json"
 
 export default function App() {
   return (
-    <div>
-      <ProfileList users = {ProfileData}
+    <>
+       <Profile
+         image={userData.avatar}
+         name={userData.username}
+         tag={userData.tag}
+         location={userData.location}
+         stats={userData.stats}
       />
-    </div>
+      <FriendList friends={friends} />
+        <TransactionHistory items={transactions} />
+    </>
   );
 };

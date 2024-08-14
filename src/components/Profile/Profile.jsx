@@ -1,31 +1,30 @@
 
-export default function Profile({
-    user: { avatar, username, tag, location, stats: { followers, views, likes } } }) {
+export default function Profile({image, name, tag, location, stats}) {
     return (
         <div>
            
              <div>
                 <img
-                    src={user.avatar}
+                    src={image}
                     alt="User avatar"
                 />
-                <p>{user.username}</p>
-                <p>{user.tag}</p>
-                <p>{user.location}</p>
+                <p>{name}</p>
+                <p>{tag}</p>
+                <p>{location}</p>
             </div>
 
             <ul>
                 <li>
                     <span>Followers</span>
-                    <span>{user.stats.followers}</span>
+                    <span>{stats.followers}</span>
                 </li>
                 <li>
                     <span>Views</span>
-                    <span>{user.stats.views}</span>
+                    <span>{stats.views}</span>
                 </li>
                 <li>
                     <span>Likes</span>
-                    <span>{user.stats.likes}</span>
+                    <span>{stats.likes}</span>
                 </li>
                 </ul>
 
@@ -33,4 +32,4 @@ export default function Profile({
     );
     
 }
- 
+    
